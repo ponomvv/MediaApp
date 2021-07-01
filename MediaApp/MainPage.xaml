@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
-    </Grid>
+    <MediaElement x:Name="media"
+                  Source="ms-appx:///Audio/Smyslovye_Gallyucinacii_-_Vechno_molodojj_48191738.mp3"
+                  AutoPlay="True" />
 </Page>
