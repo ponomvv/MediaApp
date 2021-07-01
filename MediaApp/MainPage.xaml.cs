@@ -17,25 +17,46 @@ using Windows.UI.Xaml.Navigation;
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
 namespace MediaApp
-{
+    {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class MainPage : Page
-    {
-        public MainPage()
+    public sealed partial class MainPage: Page
         {
-            this.InitializeComponent();
-            this.Loaded += MainPage_Loaded;
-        }
-
-        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        public MainPage()
             {
-            var file = await Package.Current.InstalledLocation.GetFileAsync
-                ("Audio\\Smyslovye_Gallyucinacii_-_Vechno_molodojj_48191738.mp3");
-            var stream = await file.OpenReadAsync();
-            media.SetSource(stream, "");
+            this.InitializeComponent();
+            }
+
+        private void media_MediaFailed(object sender, ExceptionRoutedEventArgs e)
+            {
+            headerBlock.Text = "Ошибка открытия файла";
+            }
+
+        private void media_MediaOpened(object sender, RoutedEventArgs e)
+            {
+            headerBlock.Text = media.Source.LocalPath;
+            }
+
+        private void media_MediaEnded(object sender, RoutedEventArgs e)
+            {
+            headerBlock.Text = "Воспроизведение завершено";
+            }
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+            {
             media.Play();
             }
+
+        private void Pause_Click(object sender, RoutedEventArgs e)
+            {
+            if (media.CanPause)
+                media.Pause();
+            }
+
+        private void Stop_Click(object sender, RoutedEventArgs e)
+            {
+            media.Stop();
+            }
         }
-}
+    }
