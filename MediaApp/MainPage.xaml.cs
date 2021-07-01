@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.ApplicationModel;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -25,6 +26,16 @@ namespace MediaApp
         public MainPage()
         {
             this.InitializeComponent();
+            this.Loaded += MainPage_Loaded;
         }
-    }
+
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+            {
+            var file = await Package.Current.InstalledLocation.GetFileAsync
+                ("Audio\\Smyslovye_Gallyucinacii_-_Vechno_molodojj_48191738.mp3");
+            var stream = await file.OpenReadAsync();
+            media.SetSource(stream, "");
+            media.Play();
+            }
+        }
 }
