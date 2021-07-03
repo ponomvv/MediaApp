@@ -133,6 +133,8 @@
     <Content Include="Audio\DDT_-_JEto_vsjo_48101569.mp3" />
     <Content Include="Audio\DDT_-_Rossiyane_48186358.mp3" />
     <Content Include="Audio\Smyslovye_Gallyucinacii_-_Vechno_molodojj_48191738.mp3" />
+    <Content Include="Images\color.JPG" />
+    <Content Include="Images\felix.JPG" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

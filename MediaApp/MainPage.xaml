@@ -10,6 +10,9 @@
     <Grid>
         <MediaElement x:Name="media"
                       AutoPlay="True"
-                      Source="Video/video.mp4" />
+                      Source="Video/video.mp4"
+                      PosterSource="Images/color.jpg"
+                      AreTransportControlsEnabled="True"
+                      IsFullWindow="True" />
     </Grid>
 </Page>
