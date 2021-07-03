@@ -8,27 +8,8 @@
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel>
-            <TextBlock x:Name="headerBlock"
-                       HorizontalAlignment="Center" />
-            <MediaElement x:Name="media"
-                          AutoPlay="False"
-                          Source="Audio\\Smyslovye_Gallyucinacii_-_Vechno_molodojj_48191738.mp3"
-                          MediaFailed="media_MediaFailed"
-                          MediaOpened="media_MediaOpened"
-                          MediaEnded="media_MediaEnded" />
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                <Button Content="Play"
-                        Click="Play_Click"
-                        Margin="10" />
-                <Button Content="Pause"
-                        Click="Pause_Click"
-                        Margin="10" />
-                <Button Content="Stop"
-                        Click="Stop_Click"
-                        Margin="10" />
-            </StackPanel>
-        </StackPanel>
+        <MediaElement x:Name="media"
+                      AutoPlay="True"
+                      Source="Video/video.mp4" />
     </Grid>
 </Page>

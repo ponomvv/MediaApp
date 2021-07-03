@@ -27,36 +27,5 @@ namespace MediaApp
             {
             this.InitializeComponent();
             }
-
-        private void media_MediaFailed(object sender, ExceptionRoutedEventArgs e)
-            {
-            headerBlock.Text = "Ошибка открытия файла";
-            }
-
-        private void media_MediaOpened(object sender, RoutedEventArgs e)
-            {
-            headerBlock.Text = media.Source.LocalPath;
-            }
-
-        private void media_MediaEnded(object sender, RoutedEventArgs e)
-            {
-            headerBlock.Text = "Воспроизведение завершено";
-            }
-
-        private void Play_Click(object sender, RoutedEventArgs e)
-            {
-            media.Play();
-            }
-
-        private void Pause_Click(object sender, RoutedEventArgs e)
-            {
-            if (media.CanPause)
-                media.Pause();
-            }
-
-        private void Stop_Click(object sender, RoutedEventArgs e)
-            {
-            media.Stop();
-            }
         }
     }
